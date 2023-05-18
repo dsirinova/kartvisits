@@ -1,0 +1,10 @@
+.card-item{
+    margin-bottom: 30px;
+}
+.card-item img{
+    width: 250px;
+    height: 250px;
+}
+.mat-mdc-card-header{
+    cursor:pointer
+}

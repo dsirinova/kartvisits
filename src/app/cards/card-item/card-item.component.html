@@ -1,0 +1,23 @@
+<mat-card class="card-item">
+    <mat-card-header class="mb-3" (click)="openUpdateCardModal(card)">
+        <mat-card-title>{{card.price | currency}}</mat-card-title>
+        <mat-card-subtitle>
+            {{card.title|slice:0:30}}<span *ngIf="showMore">{{card.title|slice:30}}</span>
+            <span *ngIf="card.title.length > 30 && !showMore">...</span> 
+        </mat-card-subtitle>
+    </mat-card-header>
+        <img mat-card-image [src]="card.image" alt="" class="">
+    <mat-card-content class="my-3">
+        <p>
+            {{card.description| slice:0:40}}<span *ngIf="showMore">{{card.description| slice:40}}</span>
+            <span *ngIf="card.description.length > 40 && !showMore">...</span>
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <span *ngIf="card.description.length > 40">
+            <button mat-button (click)="showMore = !showMore">{{showMore ? 'LESS' : 'MORE'}}</button>
+        </span>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>
